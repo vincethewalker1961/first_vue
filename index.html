@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>My first Vue</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="myScript.js"></script>
+</head>
+
+<body>
+    
+<div id="app">
+    <input type="text" v-on:input="changeTitle">
+    <h2 style= 'font-family: courier; color: blue'>{{ title }}</h2>
+
+</div>
+<script> 
+ new Vue({
+  el: '#app',
+  data: {
+    title: 'Hello Worldly people'
+  },
+  methods: {
+    changeTitle: function(event) {
+      this.title = event.target.value;
+    }
+  }
+});
+  
+</script>
+
+</body>
+</html>
