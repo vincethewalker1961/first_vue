@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>My second Vue</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="myScript.js"></script>
+</head>
+
+<body>
+    
+<div id="app">
+    <h1 align= 'center 'v-once style= 'font-family: courier; color: red'>{{ title }}</h1>
+    <!-- <input type="text" v-on:input="changeTitle"> -->
+    <p style= 'font-family: courier; color: green'>{{ sayHello() }} - <a v-bind:href="link">Vincent Walker</a></p>
+    <hr>
+    <p v-html="finishedLink" style= 'color: green !important;'></p>
+
+</div>
+<script> 
+ new Vue({
+  el: '#app',
+  data: {
+    title: 'Hello Worldly people',
+    link: 'http://vincethewalker.com',
+    finishedLink: '<a href= "http://vincethewalker.com">Vincent Walker</a>'
+  },
+  methods: {
+    sayHello: function(event) {
+        this.title = 'Get Lost'
+      return this.title 
+    }
+  }
+});
+  
+</script>
+</body>
+</html>
